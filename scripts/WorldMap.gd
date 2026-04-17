@@ -1,4 +1,4 @@
-extends Node2D
+﻿extends Node2D
 
 signal enter_port(port_id: String)
 
@@ -55,7 +55,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if nearest.is_empty():
 		return
 	enter_port.emit(nearest)
-	get_viewport().set_input_as_handled()
+
 
 
 ## Reads WASD / arrow keys and moves the CharacterBody2D player at MOVE_SPEED via move_and_slide().

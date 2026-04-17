@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cportstub01"]
+
+[ext_resource type="Script" path="res://scripts/Port.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/TradeUI.tscn" id="2"]
+
+[node name="Port" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.08, 0.12, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="WelcomeLabel" type="Label" parent="CenterContainer/MenuBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.9, 0.85, 1)
+theme_override_font_sizes/font_size = 28
+text = "Welcome to port"
+horizontal_alignment = 1
+
+[node name="VisitMarketButton" type="Button" parent="CenterContainer/MenuBox"]
+layout_mode = 2
+text = "Visit Market"
+
+[node name="LeaveButton" type="Button" parent="CenterContainer/MenuBox"]
+layout_mode = 2
+text = "Leave Port"
+
+[node name="TradeUI" parent="." instance=ExtResource("2")]
+layout_mode = 1
